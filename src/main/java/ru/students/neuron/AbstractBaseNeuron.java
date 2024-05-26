@@ -5,9 +5,9 @@ import java.util.Random;
 
 public abstract class AbstractBaseNeuron {
 
-    protected List<NeuronLink> links;
-    protected Double out;
-    protected double bias;
+    private List<NeuronLink> links;
+    private Double out;
+    private double bias;
 
     protected boolean active = true;
     protected ActivationFunction activationFunction;
@@ -45,6 +45,9 @@ public abstract class AbstractBaseNeuron {
     }
 
     public double forward() {
+        if (!active) {
+            return 0;
+        }
         double sum = bias;
         for (NeuronLink link : links) {
             sum += link.forward();
@@ -52,5 +55,16 @@ public abstract class AbstractBaseNeuron {
 
         this.out = activationFunction.normalize(sum);
         return out;
+    }
+
+    public void activate(){
+        active = true;
+    }
+    public void deactivate(){
+        active = false;
+    }
+
+    public void setLinks(List<NeuronLink> links) {
+        this.links = links;
     }
 }

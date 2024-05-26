@@ -17,7 +17,7 @@ public class FixedNeuron extends AbstractBaseNeuron {
         for (int i = 0; i < numberOfIns; i++) {
             result.add(new NeuronLink());
         }
-        links = Collections.unmodifiableList(result);
+        setLinks(Collections.unmodifiableList(result));
     }
 }
 

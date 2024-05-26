@@ -34,6 +34,9 @@ public class NeuronLink {
     }
 
     public double forward() {
+        if (!active){
+            return 0;
+        }
         this.out = in * weight;
         return out;
     }
@@ -50,7 +53,10 @@ public class NeuronLink {
         return active;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void activate(){
+        active = true;
+    }
+    public void deactivate(){
+        active = false;
     }
 }

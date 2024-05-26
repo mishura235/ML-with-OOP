@@ -33,4 +33,12 @@ abstract class AbstractNet {
 
         return ins;
     }
+
+    public List<List<Double>> forwardAll(List<List<Double>> ins) {
+        List<List<Double>> result = new ArrayList<>();
+        for(List<Double> in: ins) {
+            result.add(forward(in));
+        }
+        return result;
+    }
 }
