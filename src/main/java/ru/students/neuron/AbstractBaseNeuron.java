@@ -5,9 +5,9 @@ import java.util.Random;
 
 public abstract class AbstractBaseNeuron {
 
-    private List<NeuronLink> links;
-    private Double out;
-    private double bias;
+    protected List<NeuronLink> links;
+    protected Double out;
+    protected double bias;
 
     protected boolean active = true;
     protected ActivationFunction activationFunction;
