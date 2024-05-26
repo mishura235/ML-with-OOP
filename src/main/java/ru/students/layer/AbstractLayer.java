@@ -7,7 +7,7 @@ import ru.students.neuron.ActivationFunction;
 
 public abstract class AbstractLayer {
 
-    private final ActivationFunction activationFunction;
+    private ActivationFunction activationFunction;
 
     AbstractLayer(){
         activationFunction = n -> n*1;
@@ -37,4 +37,7 @@ public abstract class AbstractLayer {
         return outs;
     }
 
+    public void setActivationFunction(ActivationFunction activationFunction) {
+        this.activationFunction = activationFunction;
+    }
 }
